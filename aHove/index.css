@@ -8,7 +8,7 @@ li {
     list-style: none;
 }
 .main{
-    width: 400px;
+    width: 800px;
     height: 300px;
     margin: 80px auto;
 }
@@ -27,41 +27,86 @@ li {
 }
 .inner{
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height:300px;
     line-height: 300px;
-    line-height: 100%;
-    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.3);
     color: #fff;
     text-align: center;
     display: none;
 }
-.slide1{
+.e-slidetop{
     display: block;
-    -webkit-animation:mymove1 15s infinite;
-}
-.slide2{
-    display: block;
-}
-.slide3{
-    display: block;
-}
-.slide4{
-    display: block;
+    -webkit-animation:EupToDown 1s ease forwards;
 }
 
-@-webkit-key-frames mymove1{
+.e-slideright{
+    display: block;
+    -webkit-animation:ErightToLeft 1s ease forwards;
+}
+.e-slidedown{
+    display: block;
+    -webkit-animation:EdownToUp 1s ease forwards;
+}
+.e-slideleft{
+    display: block;
+    -webkit-animation:EleftToRight 1s ease forwards;
+}
+
+@-webkit-keyframes EupToDown{
     0%{
         top: -300px;
-        opacity: 0
     }
-    50% {
+    100%{
         top: 0;
-        opacity: 1;
     }
-    80% {
-        top: -100px;
+}
+
+@-webkit-keyframes EdownToUp{
+    0%{
+        bottom: -300px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+@-webkit-keyframes EleftToRight{
+    0%{
+        left: -400px;
+    }
+    100%{
+        left: 0;
+        top: 0;
+    }
+}
+
+@-webkit-keyframes ErightToLeft{
+    0%{
+        right: -400px;
+    }
+    100%{
+        right: 0;
+        top: 0;
+    }
+}
+
+.leave{
+    display: block;
+    font-size: 0;
+    -webkit-animation:leave .5s ease forwards;
+}
+@-webkit-keyframes leave{
+    0%{
+        transform: scaleY(1) rotate(0);
+        top: 0;
+    }
+    90%{
+        transform: scaleY(0) rotate(360deg);
+        top: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 0;
     }
 }
